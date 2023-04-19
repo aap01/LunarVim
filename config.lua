@@ -1,0 +1,1 @@
+/Users/alif/.config/lvim/config.lua
