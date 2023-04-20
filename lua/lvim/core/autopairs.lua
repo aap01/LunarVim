@@ -75,8 +75,11 @@ M.setup = function()
     local function on_confirm_done(...)
       require("nvim-autopairs.completion.cmp").on_confirm_done()(...)
     end
-    require("cmp").event:off("confirm_done", on_confirm_done)
-    require("cmp").event:on("confirm_done", on_confirm_done)
+
+    local cmp = require("cmp")
+    local confirm_done = "confirm_done"
+    cmp.event:off(confirm_done, on_confirm_done)
+    cmp.event:on(confirm_done, on_confirm_done)
   end)
 end
 
